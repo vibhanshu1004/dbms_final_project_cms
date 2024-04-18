@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("ConferenceManagement-main/ScreenShots/back.jpg");
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(186, 230, 231);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: rgb(40, 60, 80); /* Dark color for text */
+            background-blend-mode: multiply;
+        }
+
+        .content {
+            background-color: skyblue;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: rgb(20, 40, 60); /* Dark color for content */
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: rgb(30, 50, 70); /* Dark color for headings */
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: rgb(10, 30, 50); /* Dark color for paragraph */
+        }
+
+        button {
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            border: none;
+            background: rgb(20, 40, 60); /* Dark color for button */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgb(10, 30, 50); /* Darker color on hover */
+        }
+
+        span {
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="content">
+            <h1>Conference Management System</h1>
+            <p>Manage All Your Conferences, Meetings & Events</p>
+            <a href="conference/"><button type="button"><span></span> Manage Your Conference</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

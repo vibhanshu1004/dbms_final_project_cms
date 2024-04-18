@@ -1,0 +1,47 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="text-center">
+  <button class="btn btn-success col" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Add New Member</button>
+</div>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas-header">
+  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+  <div class="col-sm-12 container">
+      <h4 class="alert alert-info">Add a new member</h4>
+      <form class="form-control" method="POST">
+      {% csrf_token %}
+      {{ memberviewform }}
+      <p></p>
+      <input type="submit" class="btn btn-success " value="Add" id="add">
+  </form>
+  </div>
+</div>
+</div>
+<div class="container mt-3">
+  <h4 class="alert alert-info text-center">
+    Here is the list of Members
+</h4>
+</div>
+<div class="row">
+  {% for memberss in allthemembers %}
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+          <h3 class="card-title">{{memberss.member_name}}</h3>
+          <h5 class="card-text text-info">{{memberss.member_type}}</h5>
+          <p class="card-text">{{memberss.member_email}}</p>
+          <form action="{% url 'memberdelete' memberss.member_name %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+        
+{% endblock content %}
